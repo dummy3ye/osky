@@ -55,15 +55,15 @@ rvenv enter
 
 ## Commands Reference
 
-| Command | Description |
-| :--- | :--- |
-| `rvenv user --name NAME` | Set your display name |
-| `rvenv user --username HANDLE` | Set your username/handle |
-| `rvenv config --encryption METHOD` | Choose encryption backend |
-| `rvenv status` | Show current identity and session info |
-| `rvenv init` | Initialize vault in current directory |
-| `rvenv put KEY VALUE` | Store encrypted secret |
-| `rvenv list` | List vault keys |
-| `rvenv enter` | Start environment session with decrypted secrets |
-| `rvenv uptime` | Show current session duration |
-| `rvenv --version` | Show version information |
+| Command                            | Description                                      |
+| :--------------------------------- | :----------------------------------------------- |
+| `rvenv user --name NAME`           | Set your display name                            |
+| `rvenv user --username HANDLE`     | Set your username/handle                         |
+| `rvenv config --encryption METHOD` | Choose encryption backend                        |
+| `rvenv status`                     | Show current identity and session info           |
+| `rvenv init`                       | Initialize vault in current directory            |
+| `rvenv put KEY VALUE`              | Store encrypted secret                           |
+| `rvenv list`                       | List vault keys                                  |
+| `rvenv enter`                      | Start environment session with decrypted secrets |
+| `rvenv uptime`                     | Show current session duration                    |
+| `rvenv --version`                  | Show version information                         |

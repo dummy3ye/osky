@@ -1,62 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projects - Osky</title>
-    <meta name="description" content="Things I've built.">
-    <meta property="og:title" content="Projects - Osky">
-    <meta property="og:description" content="Things I've built.">
-    <meta property="og:url" content="https://home.osky.dpdns.org/projects">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <meta name="description" content="Things I've built." />
+    <meta property="og:title" content="Projects - Osky" />
+    <meta property="og:description" content="Things I've built." />
+    <meta property="og:url" content="https://home.osky.dpdns.org/projects" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div data-part="nav"></div>
+      <div data-part="nav"></div>
 
-        <h1>Projects</h1>
+      <h1>Projects</h1>
 
-        <div class="project" data-repo="rvenv" data-owner="rvenv">
-            <h2><a href="/p/rvenv">rvenv</a> <span class="stars"></span> <span class="lang">Shell</span></h2>
-            <p>minimalist terminal env-wrapper. project-scoped identities and encrypted secrets.</p>
-        </div>
+      <div class="project" data-repo="rvenv" data-owner="rvenv">
+        <h2>
+          <a href="/p/rvenv">rvenv</a> <span class="stars"></span>
+          <span class="lang">Shell</span>
+        </h2>
+        <p>
+          minimalist terminal env-wrapper. project-scoped identities and
+          encrypted secrets.
+        </p>
+      </div>
 
-        <div class="project" data-repo="lostdock">
-            <h2><a href="/p/lostdork">LostDork</a> <span class="stars"></span> <span class="lang">Python</span></h2>
-            <p>a gui dorking tool for osint.</p>
-        </div>
+      <div class="project" data-repo="lostdock">
+        <h2>
+          <a href="/p/lostdork">LostDork</a> <span class="stars"></span>
+          <span class="lang">Python</span>
+        </h2>
+        <p>a gui dorking tool for osint.</p>
+      </div>
 
-        <div class="project" data-repo="vbenchmark">
-            <h2><a href="/p/vbench">vbench</a> <span class="stars"></span> <span class="lang">Python</span></h2>
-            <p>a vpn benchmark tool written in Python3.</p>
-        </div>
+      <div class="project" data-repo="vbenchmark">
+        <h2>
+          <a href="/p/vbench">vbench</a> <span class="stars"></span>
+          <span class="lang">Python</span>
+        </h2>
+        <p>a vpn benchmark tool written in Python3.</p>
+      </div>
 
-        <div data-part="footer"></div>
+      <div data-part="footer"></div>
     </div>
 
     <script src="/parts.js"></script>
     <script>
-        document.querySelectorAll('.project').forEach(function(el) {
-            var owner = el.getAttribute('data-owner') || 'dummy3ye';
-            var name = el.getAttribute('data-repo');
-            fetch('https://api.github.com/repos/' + owner + '/' + name)
-                .then(function(r) { return r.json(); })
-                .then(function(repo) {
-                    if (!repo.id) return;
-                    var parts = [];
-                    if (repo.stargazers_count === 1)
-                        parts.push('1 star');
-                    else if (repo.stargazers_count > 1)
-                        parts.push(repo.stargazers_count + ' stars');
-                    if (repo.forks_count === 1)
-                        parts.push('1 fork');
-                    else if (repo.forks_count > 1)
-                        parts.push(repo.forks_count + ' forks');
-                    el.querySelector('.stars').textContent = parts.join(' / ');
-                });
-        });
+      document.querySelectorAll(".project").forEach(function (el) {
+        var owner = el.getAttribute("data-owner") || "dummy3ye";
+        var name = el.getAttribute("data-repo");
+        fetch("https://api.github.com/repos/" + owner + "/" + name)
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (repo) {
+            if (!repo.id) return;
+            var parts = [];
+            if (repo.stargazers_count === 1) parts.push("1 star");
+            else if (repo.stargazers_count > 1)
+              parts.push(repo.stargazers_count + " stars");
+            if (repo.forks_count === 1) parts.push("1 fork");
+            else if (repo.forks_count > 1)
+              parts.push(repo.forks_count + " forks");
+            el.querySelector(".stars").textContent = parts.join(" / ");
+          });
+      });
     </script>
-</body>
+  </body>
 </html>

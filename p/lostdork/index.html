@@ -1,32 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LostDork - Osky</title>
-    <link rel="icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div data-part="nav"></div>
+      <div data-part="nav"></div>
 
-        <a class="back" href="/projects">&larr; Back</a>
+      <a class="back" href="/projects">&larr; Back</a>
 
-        <div class="intro">
-            <h1 id="proj-name">lostdock</h1>
-            <p id="proj-desc"></p>
-            <p style="color: #888; font-size: 0.85rem;"><span id="proj-meta"></span> <a id="proj-link" target="_blank" rel="noopener" style="margin-left: 0.8rem;">GitHub</a></p>
-        </div>
+      <div class="intro">
+        <h1 id="proj-name">lostdock</h1>
+        <p id="proj-desc"></p>
+        <p style="color: #888; font-size: 0.85rem">
+          <span id="proj-meta"></span>
+          <a
+            id="proj-link"
+            target="_blank"
+            rel="noopener"
+            style="margin-left: 0.8rem"
+            >GitHub</a
+          >
+        </p>
+      </div>
 
-        <div class="post" id="readme">loading readme...</div>
+      <div class="post" id="readme">loading readme...</div>
     </div>
 
     <script src="/parts.js"></script>
     <script src="/blog/md.js"></script>
     <script src="/p/project.js"></script>
     <script>
-        loadProject('dummy3ye', 'lostdock');
+      loadProject("dummy3ye", "lostdock");
     </script>
-</body>
+  </body>
 </html>

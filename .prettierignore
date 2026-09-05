@@ -1,0 +1,7 @@
+# .prettierignore
+fonts/
+img/
+temp/
+test/
+*.gif
+*.svg

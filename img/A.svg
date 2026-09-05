@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200">
+  <defs>
+    <!-- Sharp arrowhead marker for main vectors (teal & orange) -->
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#55aa99"/>
+    </marker>
+    
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#cc8855"/>
+    </marker>
+
+    <!-- Purple marker aligned so the sharp tip rests exactly at refX="8" -->
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#9977bb"/>
+    </marker>
+  </defs>
+
+  <!-- Straight Vector v (teal) -->
+  <line x1="140" y1="30" x2="90" y2="150" stroke="#55aa99" stroke-width="2" marker-end="url(#arrow-teal)"/>
+  <text x="76" y="170" fill="#55aa99" font-family="Georgia, serif" font-size="18" font-style="italic">v</text>
+
+  <!-- Straight Vector v' (orange) -->
+  <line x1="140" y1="30" x2="190" y2="150" stroke="#cc8855" stroke-width="2" marker-end="url(#arrow-orange)"/>
+  <text x="194" y="170" fill="#cc8855" font-family="Georgia, serif" font-size="18" font-style="italic">v'</text>
+
+  <!-- Curved dashed arc touching vector lines exactly -->
+  <path d="M 114,93 Q 140,110 166,93" fill="none" stroke="#9977bb" stroke-width="1.5" stroke-dasharray="4,3" marker-start="url(#arrow-purple)" marker-end="url(#arrow-purple)"/>
+
+  <!-- Origin vertex dot (placed after lines so it sits on top in render order) -->
+  <circle cx="140" cy="30" r="3.5" fill="#888"/>
+
+  <!-- Formula at bottom -->
+  <text y="198" font-family="Georgia, serif" font-size="16" text-anchor="middle" font-style="italic" x="140">
+    <tspan fill="#55aa99">v</tspan>
+    <tspan fill="#999"> = </tspan>
+    <tspan fill="#9977bb">e</tspan>
+    <tspan fill="#9977bb" font-size="11" dy="-6">-&#x00BD;&#x03B8;B</tspan>
+    <tspan fill="#cc8855" font-size="16" dy="6">v'</tspan>
+    <tspan fill="#9977bb">e</tspan>
+    <tspan fill="#9977bb" font-size="11" dy="-6">&#x00BD;&#x03B8;B</tspan>
+  </text>
+</svg>

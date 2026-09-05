@@ -1,72 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Osky</title>
-    <meta name="description" content="me is oskyy.">
-    <meta property="og:title" content="Osky">
-    <meta property="og:description" content="me is oskyy.">
-    <meta property="og:url" content="https://home.osky.dpdns.org">
-    <meta property="og:type" content="website">
-    <link rel="icon" href="/favicon.svg">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <meta name="description" content="me is oskyy." />
+    <meta property="og:title" content="Osky" />
+    <meta property="og:description" content="me is oskyy." />
+    <meta property="og:url" content="https://home.osky.dpdns.org" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div data-part="nav"></div>
+      <div data-part="nav"></div>
 
-        <!-- deco images go here
-        <img class="deco deco-left" src="/img/..." alt="Deco image #1">
-        <img class="deco deco-right" src="/img/..." alt="Deco image #2"> -->
+      <!-- deco images go here -->
+      <img class="deco deco-left" src="/img/A.svg" alt="Deco image #1" />
+      <!-- <img class="deco deco-right" src="/img/..." alt="Deco image #2"> -->
 
-        <div class="intro">
-            <h1>hi im Osky</h1>
-            <p>aka Imtiyaz. i kinda like writing C, basically too much interested in kernel. Also im into integration differentiation, linial and geomatric algebra. I daily drive Arch with hyprland on a Asus.</p>
-            <p>anways :p</p>
-        </div>
+      <div class="intro">
+        <h1>hi im Osky</h1>
+        <p>
+          aka Imtiyaz. i kinda like writing C, basically too much interested in
+          kernel. Also im into integration differentiation, linial and geomatric
+          algebra. I daily drive Arch with hyprland on a Asus.
+        </p>
+        <p>anways :p</p>
+      </div>
 
-        <h2>Projects</h2>
-        <div class="card-grid">
-            <a class="card" href="/p/rvenv">
-                <strong>rvenv</strong>
-                <span>rvenv is a minimalist terminal env-wrapper. </span>
-            </a>
-            <a class="card" href="/p/lostdork">
-                <strong>LostDork</strong>
-                <span>a gui dorking tool for osint</span>
-            </a>
-            <a class="card" href="/p/vbench">
-                <strong>vbench</strong>
-                <span>a vpn benchmark tool written in Python3.</span>
-            </a>
-        </div>
-        <p class="more-link"><a href="/projects">All projects &rarr;</a></p>
-
-        <h2>Latest post</h2>
-        <a class="card" id="latest-post" href="/blog">
-            <strong>...</strong>
-            <span></span>
+      <h2>Projects</h2>
+      <div class="card-grid">
+        <a class="card" href="/p/rvenv">
+          <strong>rvenv</strong>
+          <span>rvenv is a minimalist terminal env-wrapper. </span>
         </a>
+        <a class="card" href="/p/lostdork">
+          <strong>LostDork</strong>
+          <span>a gui dorking tool for osint</span>
+        </a>
+        <a class="card" href="/p/vbench">
+          <strong>vbench</strong>
+          <span>a vpn benchmark tool written in Python3.</span>
+        </a>
+      </div>
+      <p class="more-link"><a href="/projects">All projects &rarr;</a></p>
 
-        <div data-part="footer"></div>
+      <h2>Latest post</h2>
+      <a class="card" id="latest-post" href="/blog">
+        <strong>...</strong>
+        <span></span>
+      </a>
+
+      <div data-part="footer"></div>
     </div>
 
     <script src="/parts.js"></script>
     <script>
-        fetch('/blog/index.html')
-            .then(function(r) { return r.text(); })
-            .then(function(html) {
-                var doc = new DOMParser().parseFromString(html, 'text/html');
-                var first = doc.querySelector('.post-list li');
-                if (first) {
-                    var link = first.querySelector('a');
-                    var card = document.getElementById('latest-post');
-                    card.href = link.getAttribute('href');
-                    card.querySelector('strong').textContent = link.textContent;
-                    card.querySelector('span').textContent = first.querySelector('.date').textContent;
-                }
-            });
+      fetch("/blog/index.html")
+        .then(function (r) {
+          return r.text();
+        })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, "text/html");
+          var first = doc.querySelector(".post-list li");
+          if (first) {
+            var link = first.querySelector("a");
+            var card = document.getElementById("latest-post");
+            card.href = link.getAttribute("href");
+            card.querySelector("strong").textContent = link.textContent;
+            card.querySelector("span").textContent =
+              first.querySelector(".date").textContent;
+          }
+        });
     </script>
-</body>
+  </body>
 </html>
